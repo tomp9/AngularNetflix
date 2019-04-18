@@ -1,0 +1,54 @@
+<h1>Prueba del módulo http</h1>
+<div class="container">
+<div class="row">
+  <div class="col-8">
+    <table class="table table-striped" style="color: aliceblue">
+      <thead>
+        <th>Id</th>
+        <th>titulo</th>
+        <th>Género</th>
+        <th>Calificación</th>
+        <th>Año</th>
+      </thead>
+      <tbody>
+        <tr *ngFor='let pelicula of movies'>
+          <td>{{pelicula.id}}</td>
+          <td>{{pelicula.title}}</td>
+          <td>{{pelicula.genre}}</td>
+          <td>{{pelicula.rating}}</td>
+          <td>{{pelicula.year}}</td>
+          <td>
+            <!-- (click)="eliminarPelicula(pelicula.id)"  -->
+            <button (click)="eliminarPelicula(pelicula.id)"  class="btn btn-primary">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-4">
+    <h3>Formulario</h3>
+    <div class="form-group">
+      <label for="controltitle">Titulo</label>
+      <input type="text" class="form-control" placeholder="Titulo de la pelicula" 
+             [(ngModel)]="agregarPeliculaRegistro.title">
+    </div>
+    <div class="form-group">
+      <label for="controlgenre">Genero</label>
+      <input type="text" class="form-control" placeholder="Genero de la pelicula"
+             [(ngModel)]="agregarPeliculaRegistro.genre" >
+    </div>
+    <div class="form-group">
+      <label for="controlrating">Calificación(0..5)</label>
+      <input type="text" class="form-control" placeholder="Calificación de la pelicula"
+             [(ngModel)]="agregarPeliculaRegistro.rating" >
+    </div>
+    <div class="form-group">
+      <label for="controlyear">Año</label>
+      <input type="text" class="form-control" placeholder="Año de la pelicula"
+             [(ngModel)]="agregarPeliculaRegistro.year">
+    </div>
+    <!-- (click)="agregarPelicula()"  -->
+    <button (click)="agregarPelicula()"  class="bnt btn-primary">Agregar Pelicula</button>
+  </div>
+</div>
+</div>

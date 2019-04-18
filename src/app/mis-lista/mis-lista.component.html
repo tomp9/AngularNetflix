@@ -1,0 +1,29 @@
+<table class="table table table-striped table-dark" >
+  <thead>
+    <tr>
+      <td>Titulo</td>
+      <td>Año</td>
+      <td>imdbRating</td>
+      <td>Idioma</td>
+       <td>Premios</td>
+       <td>Genero</td>
+      <td style="padding-left: 10%">Portada</td>
+    </tr>
+  </thead> 
+  <tbody>
+    <tr *ngFor='let pelicula of peliculas' >
+      <td>{{pelicula.Title}}</td>
+      <td>{{pelicula.Year}}</td>
+      <td>{{pelicula.imdbRating}}</td>
+      <td>{{pelicula.Language}}</td>
+      <td>{{pelicula.Awards}}</td>
+      <td>{{pelicula.Genre}}</td>
+      
+      <img src="{{pelicula.Images[0]}}" style="display: block;
+      margin-left: auto;
+      margin-right: auto;  width: 65%;
+      height: 150px;">
+     
+    </tr>
+  </tbody>
+</table>

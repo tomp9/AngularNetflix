@@ -1,0 +1,48 @@
+<div class="pos-f-t bg-dark text-white" >
+  
+  <nav class="navbar navbar-dark" style="background-color: #221F1F">
+    <button class="navbar-toggler btn-outline-danger " style="background-color: #221F1F" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon" ></span>
+    </button>
+    
+    <img src="assets/logo.png" class="img-fluid" alt="Responsive image" style=" width: 12%; align-content: flex-start ">
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+      <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
+  </nav>
+  
+ 
+</div>
+<div class="collapse bg-secondary text-white" id="navbarToggleExternalContent" style="display:-moz-popup" >
+  <div class="p-10">
+    <div class="row">
+      <div class="col-4">
+        <div class="list-group bg-dark" id="list-tab" role="tablist">
+           
+          <a class="list-group-item list-group-item-action bg-dark text-white" id="list-home-list" data-toggle="list" role="tab" aria-controls="home" >Inicio</a>
+          <a class="list-group-item list-group-item-action bg-dark text-white" id="list-home-list" data-toggle="list" role="tab" aria-controls="home" [routerLink]="[ '/cuenta']">Cuenta</a>
+          <a class="list-group-item list-group-item-action bg-dark text-white" id="list-profile-list" data-toggle="list" role="tab" aria-controls="profile">Noticaciones</a>
+          <a class="list-group-item list-group-item-action bg-dark text-white" id="list-messages-list" data-toggle="list"  role="tab" aria-controls="messages" [routerLink]="[ '/mis-descargas', 1, 657533]">Mis Descargas</a>
+          <a class="list-group-item list-group-item-action bg-dark text-white" id="list-settings-list" data-toggle="list"  role="tab" aria-controls="settings" [routerLink]="[ '/mis-lista']">Mi Lista</a>
+          <div class="dropdown">
+              <button class="list-group-item list-group-item-action bg-dark text-white btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Busquedas
+              </button>
+              <div class="dropdown-menu bg-dark text-white" aria-labelledby="dropdownMenuButton">
+                <a *ngFor="let tipo of subCategorias" >
+                  <div *ngIf="tipo=='Series'; else opcion2"><a class="dropdown-item bg-dark text-danger" href="#{{tipo}}">{{tipo}} </a></div>
+                  <ng-template #opcion2>
+                    <a class="dropdown-item bg-dark text-white " href="#{{tipo}}">{{tipo}} </a>
+                  </ng-template>  
+                </a> 
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="col-8">
+       
+      </div>
+    </div>
+  </div>
+</div>

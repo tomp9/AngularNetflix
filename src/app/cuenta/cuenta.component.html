@@ -1,0 +1,36 @@
+<div class="container">
+  
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-5">
+        <h1 style="padding-bottom: 2%; padding-top: 2%;">Cuenta </h1>
+        <form [formGroup]='formularioCuenta' (submit)='onSubmit(formularioCuenta)'>
+            <div class="form-group">
+                <label for="inputNombre">Nombre</label>
+                <input type="text" formControlName="nombre" class="form-control" id="inputNombre" placeholder="Escribe tu nombre">
+                <div class="errorCodigo" *ngIf="formularioCuenta.controls.nombre.errors">
+                    El campo tiene un error 
+                </div>
+              </div>
+            
+            <div class="form-group">
+                <label for="inputApellido">Apellido</label>
+                <input type="text" formControlName="apellido" class="form-control" id="inputApellido" placeholder="Escribe tu apellido">
+            </div>
+            <div class="errorCodigo" *ngIf='formularioCuenta.controls.apellido.errors'>
+                El campo tiene un error 
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">Asegurate de recibir el email de confirmación.</small>
+            </div>
+            <div class="errorCodigo" *ngIf='formularioCuenta.controls.email.errors'>
+                El campo tiene un error 
+            </div>
+            <button type="submit" class="btn btn-danger">Guardar</button>
+          </form>
+    </div>
+    <div class="col-4"></div>
+  </div>  
+</div>
